@@ -1,0 +1,19 @@
+.nav-link{
+    color: white !important;
+}
+.nav-link:hover{
+    color: black !important;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.navbar-brand:hover{
+    color: black !important;
+    background-color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.mydivstyle:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-20px);
+}
