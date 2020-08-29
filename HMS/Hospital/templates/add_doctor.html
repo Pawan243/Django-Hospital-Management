@@ -1,0 +1,34 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    <h2 class="text-center">Add Doctor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Doctor Name</label>
+        <input type="text" class="form-control" name="name" required>
+        <label for="">Contact</label>
+        <input type="phone" class="form-control" name="contact" required>
+        <label for="">Special</label>
+        <input type="text" class="form-control" name="special" required>
+        <br>
+        <input type="submit" value="submit" class="form-control btn btn-primary">
+
+    </form>
+</div>
+
+{% ifequal error "no" %}
+<script>
+    alert('Insertion Successfully')
+    window.location="{% url 'view_doctor'%}";
+</script>
+{% endifequal %}
+{% ifequal error "Yes" %}
+<script>
+    alert('Something went wrong, Please Try Again');
+</script>
+{% endifequal %}
+
+{% endblock %}

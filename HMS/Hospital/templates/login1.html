@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+{% block title %}
+Admin Login
+{% endblock %}
+{% block body %}
+{% ifequal error "no" %}
+<script>
+    alert('Login Successfully')
+    Window.location=("{% url '/index' %}")
+</script>
+{% endifequal %}
+{% ifequal error "Yes" %}
+<script>
+    alert('Invalid Login Credintials, Try Again');
+</script>
+{% endifequal %} 
+
+<div class="container">
+    <h2 class="text-center">Admin Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Admin Name</label>
+        <input type="text" class="form-control" name="uname">
+        <label for="">Password</label>
+        <input type="password" class="form-control" name="pwd">
+        <br>
+        <input type="submit" value="Login" class="form-control btn btn-primary">
+
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    <h2 class="text-center">Add Appointment</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Doctor Name</label>
+        <select name="doctor" id="" class="form-control">
+            {% for i in doctor %}
+            <option value="{{i.name}}"> {{i.name}} [{{i.id}}]</option>
+            {% endfor %}
+        </select>
+        <label for="">Patient name</label>
+        <select name="patient" id="" class="form-control">
+            {% for i in patient %}
+            <option value="{{i.name}}"> {{i.name}} [{{i.id}}]</option>
+            {% endfor %}
+        </select>
+        <label for="">Date</label>
+        <input type="date" class="form-control" name="date">
+        <br>
+        <label for="">Time</label>
+        <input type="time" class="form-control" name="time">
+        <br>
+        <input type="submit" value="submit" class="form-control btn btn-primary">
+    </form>
+</div>
+
+{% ifequal error "no" %}
+<script>
+    alert('Insertion Successfully')
+    window.location="{% url 'view_appointment' %}";
+</script>
+{% endifequal %}
+{% ifequal error "Yes" %}
+<script>
+    alert('Something went wrong, Please Try Again');
+</script>
+{% endifequal %}
+
+{% endblock %}
