@@ -23,7 +23,7 @@
                 <th>{{i.patient}}</th>
                 <th>{{i.date1}}</th>
                 <th>{{i.time1}}</th>
-                <th><a href="{% url 'delete_appointmet' i.id %}" onclick="return confirm('Are you really want to delete?')" class="btn btn-danger">Delete</a> </th>
+                <th><a href="{% url 'delete_appointment' i.id %}" onclick="return confirm('Are you really want to delete?')" class="btn btn-danger">Delete</a> </th>
             </tr>
             {% endfor %}
         </tbody>
