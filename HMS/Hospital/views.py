@@ -100,7 +100,7 @@ def view_Appointment(request):
 
     appoint = Appointment.objects.all()
     d = {'appoint':appoint}
-    return render(request, 'view_appointment.html',d)
+    return render(request,'view_appointment.html',d)
 
 def add_Appointment(request):
     error=""
@@ -119,7 +119,7 @@ def add_Appointment(request):
         except:
             error="Yes"
 
-    d = {'doctor':doctor1,'patient':patient1,'error':error}
+    d = {'error':error,'doctor':doctor1,'patient':patient1}
     return render(request, 'add_appointment.html',d)
 
 def Delete_Appointment(request, pid):
