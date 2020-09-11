@@ -32,7 +32,7 @@
 {% ifequal error "no" %}
 <script>
     alert('Insertion Successfully')
-    window.location="{% url 'view_appointment' %}";
+    window.location="{% url 'view_appointment'%}";
 </script>
 {% endifequal %}
 {% ifequal error "Yes" %}
