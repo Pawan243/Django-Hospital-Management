@@ -20,11 +20,11 @@ class Patient(models.Model):
 
 class Appointment(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    paitent = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
 
     date1 = models.DateField()
     time1 = models.TimeField()
     
 
     def __str__(self):
-        return self.doctor.name+"--"+ self.patient.name
+        return self.doctor.name+"--"+self.patient.name
