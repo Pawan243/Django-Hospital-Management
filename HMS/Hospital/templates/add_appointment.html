@@ -29,16 +29,4 @@
     </form>
 </div>
 
-{% ifequal error "no" %}
-<script>
-    alert('Insertion Successfully')
-    window.location="{% url 'view_appointment'%}";
-</script>
-{% endifequal %}
-{% ifequal error "Yes" %}
-<script>
-    alert('Something went wrong, Please Try Again');
-</script>
-{% endifequal %}
-
 {% endblock %}
