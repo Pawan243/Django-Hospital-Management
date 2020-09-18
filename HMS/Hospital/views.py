@@ -15,8 +15,9 @@ def about(request):
 
 
 def index(request):
-    # if not request.user.is_staff:
-    #     return redirect('')
+    if not request.user.is_staff:
+        return redirect('login')
+
     doctors = Doctor.objects.all()
     patient = Patient.objects.all()
     appointment = Appointment.objects.all()
@@ -140,7 +141,7 @@ def login(request):
             return redirect("/")
 
         else:
-            messages.info(request, 'Invalid credentials')
+            messages.info(request, 'Invalid credentials, Please Try Again.')
             return redirect('login')
 
     else:
