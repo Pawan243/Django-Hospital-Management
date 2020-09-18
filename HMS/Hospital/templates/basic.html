@@ -35,9 +35,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="myMenu">
-        <ul class="navbar-nav text-center ml-auto">
+        <ul class="navbar-nav text-center mr-auto">
           <li class="nav-item"><a class="nav-link" href="/"><i class="fa fa-home"></i> Home</a></li>
-          <!-- {% if user.is_authenticated %} -->
+          <li class="nav-item"><a class="nav-link" href="/about"><i class="fa fa-address-card"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact"><i class="fa fa-phone-square"></i>Contact</a></li>
+        </ul>
+        <ul class="navbar-nav text-center ml-auto">
           <li class="text-info text-uppercase"><b>Hello, {{user.first_name}}</b></li>
 
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Doctor</a>
@@ -63,16 +66,6 @@
           </li>
 
           <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-
-          <!-- {% else %} -->
-
-          <li class="nav-item"><a class="nav-link" href="/about"><i class="fa fa-address-card"></i>About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact"><i class="fa fa-phone-square"></i>Contact</a></li>
-
-          <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="/login">Login</li>
-
-          <!-- {% endif %} -->
 
         </ul>
       </div>
