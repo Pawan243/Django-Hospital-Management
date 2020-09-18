@@ -12,6 +12,17 @@
 
 <body>
     <div class="login-clean">
+        <div class="contaier">
+            <h2 class="text-center pb-3">Welcome To Login</h2>
+        </div>
+        <div>
+            {% for message in messages %}
+            <script>
+                alert('{{message}}')
+            </script>
+            {% endfor %}
+        </div>
+        <h2 class="sr-only">Login Form</h2>
         <form method="post">
             {% csrf_token %}
             <h2 class="sr-only">Login Form</h2>
@@ -20,7 +31,8 @@
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password">
             </div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
-            <a href="#" class="forgot">Forgot your email or password?</a>
+            <p class="text-center">Don't have an account?
+            <a href="/register" class="forgot" style="color: blueviolet; font-size:large "><b>Sign Up</b></a> </p>  
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
