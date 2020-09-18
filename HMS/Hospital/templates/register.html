@@ -14,9 +14,15 @@
     <div class="registration-form">
         <div>
             {% for message in messages %}
-            <h3>{{message}}</h3>
-    
+            <script>
+                alert('{{message}}')
+            </script>
             {% endfor %}
+        </div>
+        <div>
+            <h2 class="text-center pb-3">
+                Welcome To Registration
+            </h2>
         </div>
         <form method="post">
             {% csrf_token %}
@@ -44,6 +50,9 @@
             <div class="form-group">
                 <button type="submit" value="Submit" class="btn btn-block create-account">Create Account</button>
             </div>
+            <p class="text-center">Already have an account?
+                <a href="/login" class="forgot" style="color: blueviolet; font-size:large "><b>Login</b></a> </p> 
+            
         </form>
         <div class="social-media">
             <h5>Sign up with social media</h5>
