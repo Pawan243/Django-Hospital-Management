@@ -15,7 +15,7 @@ def about(request):
 
 
 def index(request):
-    if not request.user.is_staff:
+    if not request.user.is_authenticated:
         return redirect('login')
 
     doctors = Doctor.objects.all()
