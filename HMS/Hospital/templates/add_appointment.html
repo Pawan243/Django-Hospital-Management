@@ -28,5 +28,16 @@
         <input type="submit" value="submit" class="form-control btn btn-primary">
     </form>
 </div>
+{% ifequal error "no" %}
+<script>
+    alert('Insertion Successfully')
+    window.location="/view_appointment";
+</script>
+{% endifequal %}
+{% ifequal error "Yes" %}
+<script>
+    alert('Something went wrong, Please Try Again');
+</script>
+{% endifequal %}
 
 {% endblock %}
