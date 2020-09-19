@@ -104,6 +104,7 @@ def view_Appointment(request):
     return render(request,'view_appointment.html',d)
 
 def add_Appointment(request):
+    error = ""
     doctor1 = Doctor.objects.all()
     patient1 = Patient.objects.all()
     if request.method=="POST":
@@ -113,18 +114,22 @@ def add_Appointment(request):
         t = request.POST['time']
         doctor = Doctor.objects.filter(name=d).first()
         patient = Patient.objects.filter(name=p).first()
-            
-        Appointment.objects.create(doctor=doctor,patient=patient,date1=d1,time1=t)
-           
 
-    d = {'doctor':doctor1,'patient':patient1}
+        try:   
+            Appointment.objects.create(doctor=doctor,patient=patient,date1=d1,time1=t)
+            error = "no"
+        except:
+            error = "Yes"
+
+    d = {'doctor':doctor1,'patient':patient1, 'error':error}
     return render(request, 'add_appointment.html',d)
 
 def Delete_Appointment(request, pid):
     
     appointment = Appointment.objects.get(id=pid)
     appointment.delete()
-    return redirect('view_appointment.html')
+
+    return redirect('/view_appointment')
 
 
 
