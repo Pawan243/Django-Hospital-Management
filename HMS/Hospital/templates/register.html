@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <title>Registration Form</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'assets/css1/style.css' %}">
 </head>
 <body>
-    <div class="registration-form">
+    <div class="registration-form container pt-10" style="width:800px; height:5px">
         <div>
             {% for message in messages %}
             <script>
@@ -20,11 +20,11 @@
             {% endfor %}
         </div>
         <div>
-            <h2 class="text-center pb-3">
+            <h2 class="text-center pb-3" style="color:cadetblue; border-radius:10px">
                 Welcome To Registration
             </h2>
         </div>
-        <form method="post">
+        <form method="post" class="pb-2">
             {% csrf_token %}
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
