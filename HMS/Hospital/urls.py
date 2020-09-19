@@ -16,5 +16,5 @@ urlpatterns = [
     path('add_patient/',views.add_Patient, name="add_patient"),
     path('add_appointment/', views.add_Appointment, name="add_appoinment"),
     path('view_appointment/', views.view_Appointment, name="view_appoinment"),
-    path('delete_appointment(?p<int:pid>)', views.Delete_Appointment, name="delete_appointment"),
+    path('delete_appointment(?P<int:pid>)', views.Delete_Appointment, name="delete_appointment"),
 ]
