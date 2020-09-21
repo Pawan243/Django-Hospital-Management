@@ -1,5 +1,6 @@
 # Django-Hospital-Management
 Django hospital management system, built with django python webframwork.  
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Pawan%20Kumar-red)
 
 ## Installation
 
