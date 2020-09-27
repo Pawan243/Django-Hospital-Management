@@ -12,3 +12,5 @@ Django hospital management system, built with django python webframwork.
 - Apply migrations. `python manage.py migrate`
 - Create a super user. `python manage.py createsuperuser`
 - Run the server. `python manage.py runserver`
+
+Show your support by 🌟 the project!!
