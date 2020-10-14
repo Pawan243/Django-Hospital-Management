@@ -32,8 +32,22 @@
             </div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
             <p class="text-center">Don't have an account?
-            <a href="/register" class="forgot" style="color: blueviolet; font-size:large "><b>Sign Up</b></a> </p>  
+            <a href="/register" class="forgot" style="color: blueviolet; font-size:large "><b>Sign Up</b></a> </p> 
         </form>
+        <div class="row">
+            <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+                <button class="btn btn-danger  mb-2">
+                    <a href="#" class="text-white">Login with Instagram</a>
+                </button>
+                <button class="btn btn-primary mb-2">
+                    <a href="{% url 'social:begin' 'facebook' %}" class="text-white">Login with Facebook
+                    </a>
+                </button>
+                <button class="btn btn-info mb-2">
+                    <a href="#" class="text-white">Login with LinkedIn</a>
+                </button>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
